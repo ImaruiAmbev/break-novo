@@ -24,17 +24,38 @@ class Mapa
         }
     }
 
-    public function ListarCLiente($mapa_selecionado)
+    public function ListarClientes($mapaSelecionado)
     {
-        $stmt_cliente = $this->conn->prepare("SELECT cliente FROM mapa_dia WHERE mapa = ?");
-        $stmt_cliente->bind_param("i", $mapa_selecionado);
-        $stmt_cliente->exeute();
-        $result_cliente = $stmt_cliente->get_result();
+        $stmt = $this->conn->prepare("SELECT cod_cli FROM mapa_dia WHERE mapa = ?");
+        $stmt->bind_param("i", $mapaSelecionado);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($result_cliente->num_rows > 0) {
-            return $result_cliente->fetch_all(MYSQLI_ASSOC);
-        } else {
-            return [];
+        $clientes = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $clientes[] = $row['cod_cli'];
+            }
         }
+
+        return $clientes;
+    }
+
+    public function ListarNf($PdvSelecionado)
+    {
+        $hoje = date('Y-m-d');
+        $stmt = $this->conn->prepare("SELECT nf FROM mapa_dia WHERE cod_cli = ? AND data = '$hoje'");
+        $stmt->bind_param("s", $PdvSelecionado);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $nfs = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $nfs[] = $row['nf'];
+            }
+        }
+
+        return $nfs;
     }
 }
