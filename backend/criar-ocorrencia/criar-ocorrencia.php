@@ -1,6 +1,6 @@
 <?php
-include 'conexao.php';
-include 'classes/classes-criar-ocorrencias.php';
+include '../conexao.php';
+include '../classes/classes-criar-ocorrencias.php';
 
 $conexao = new Conexao();
 $conn = $conexao->getConexao();

@@ -159,4 +159,8 @@ body {
     animation: surgir-container 1s ease;
 }
 
+.section-pagina{
+    display: grid;
+}
+
 /* Fim Criar Ocorrencia */
