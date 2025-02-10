@@ -33,8 +33,8 @@ $modulos = $modulo->ListarModulo();
             <?php foreach ($modulos as $modulo) {
                 echo "<div class='modulo' style='background-color: " . htmlspecialchars($modulo['cor']) . " ;' onclick=\"window.location.href = 'criar-ocerrencia.php?matricula=$matricula'\">
                     <div class='elementos-modulo'>
-                        <h1> " . htmlspecialchars($modulo['nome']) . "
-                        <img alt='src/img" . htmlspecialchars($modulo['imagem']) . "' src='" . htmlspecialchars($modulo['imagem']) . "'>
+                        <h1> " . htmlspecialchars($modulo['nome']) . " </h1>
+                        <img alt='" . htmlspecialchars($modulo['imagem']) . "' src='src/img/modulos/" . htmlspecialchars($modulo['imagem']) . "' width='50'>
                     </div>
                 </div>";
             } ?>

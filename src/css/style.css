@@ -93,17 +93,17 @@ body {
     animation: surgir-container 1s ease;
 }
 
-.titulo-menu{
+.titulo-menu {
     margin-top: 30px;
 }
 
-.titulo-menu h1{
+.titulo-menu h1 {
     text-align: center;
     color: var(--preto-texto);
     font-size: 30px;
 }
 
-.div-modulos{
+.div-modulos {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -121,18 +121,33 @@ body {
     align-items: center;
 }
 
-.elementos-modulo{
+.elementos-modulo {
     display: flex;
     width: 90%;
     justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 30px;
     color: var(--branco);
 }
 
 /* Fim Index */
 
 /* Criar Ocorrencia */
+.pai-voltar {
+    display: flex;
+    align-items: center;
+}
 
-.voltar{
+.pai-voltar img {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+    animation: surgir-cabecalho 1s;
+}
+
+.voltar {
     background-color: white;
     display: flex;
     align-items: center;
@@ -144,11 +159,11 @@ body {
     animation: surgir-cabecalho 1s;
 }
 
-.voltar i{
+.voltar i {
     margin: auto;
 }
 
-.container-pagina{
+.container-pagina {
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -157,10 +172,66 @@ body {
     border-radius: 30px 30px 0px 0px;
     transform: translate(0px, 0%);
     animation: surgir-container 1s ease;
+    text-align: center;
+    overflow-x: auto;
 }
 
-.section-pagina{
+.section-pagina {
     display: grid;
+    width: 90vw;
+    margin: auto;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section-pagina select {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: none;
+    background-color: var(--fundo-input);
+    border-radius: 50px;
+    max-width: 90vw;
+}
+
+.section-pagina input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: none;
+    background-color: var(--fundo-input);
+    border-radius: 50px;
+    max-width: 90vw;
+}
+
+.section-pagina textarea {
+    width: 377px;
+    height: 52px;
+    max-height: 52px;
+    max-width: 90vw;
+    min-width: 90vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: none;
+    background-color: var(--fundo-input);
+    border-radius: 5px;
+}
+
+.section-pagina button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: #0fd869;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.botao-adicionar {
+    background-color: var(--azul-fundo) !important;
 }
 
 /* Fim Criar Ocorrencia */
